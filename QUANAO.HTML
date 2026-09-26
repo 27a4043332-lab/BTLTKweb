@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YENNHI - Thời trang CHÁY NHƯ FREE FIRE</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">YEN<span>NHI</span></div>
+
+        <nav>
+            <a href="#home">Trang chủ</a>
+            <a href="#products">Sản phẩm</a>
+            <a href="#about">Về chúng tôi</a>
+            <a href="#contact">Liên hệ</a>
+        </nav>
+
+        <div class="header-right">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Tìm sản phẩm...">
+                <button onclick="searchProducts()">🔍</button>
+            </div>
+
+            <button class="cart-btn" onclick="openCart()">
+                🛒 <span id="cartCount">0</span>
+            </button>
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="small-title">NEW COLLECTION 2026</p>
+
+            <h1>
+                Thời trang.<br>
+                <span>Cháy như Free fire.</span>
+            </h1>
+
+            <p class="hero-description">
+                Khám phá bộ sưu tập thời trang mới nhất
+                dành cho những người trẻ xinh đẹp như Yến Nhi.
+            </p>
+
+            <a href="#products" class="hero-btn">
+                KHÁM PHÁ NGAY →
+            </a>
+        </div>
+    </section>
+
+
+    <!-- CATEGORY -->
+    <section class="category">
+        <h2>Danh mục sản phẩm</h2>
+
+        <div class="category-list">
+            <button onclick="filterProducts('all')">Tất cả</button>
+            <button onclick="filterProducts('ao')">Áo</button>
+            <button onclick="filterProducts('quan')">Quần</button>
+            <button onclick="filterProducts('vay')">Váy</button>
+            <button onclick="filterProducts('phukien')">Phụ kiện</button>
+        </div>
+    </section>
+
+
+    <!-- PRODUCTS -->
+    <section class="products-section" id="products">
+
+        <div class="section-title">
+            <p>OUR PRODUCTS</p>
+            <h2>Sản phẩm nổi bật</h2>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+
+            <!-- PRODUCT 1 -->
+            <div class="product-card" data-category="ao" data-name="Áo thun Basic">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80"
+                         alt="Áo thun Basic">
+                    <span class="sale">-20%</span>
+                </div>
+
+                <div class="product-info">
+                    <p class="category-name">ÁO</p>
+                    <h3>Áo thun Basic</h3>
+
+                    <div class="price">
+                        <span class="new-price">239.000₫</span>
+                        <span class="old-price">299.000₫</span>
+                    </div>
+
+                    <button onclick="addToCart('Áo thun Basic', 239000)">
+                        Thêm vào giỏ
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+            <div class="product-card" data-category="ao" data-name="Áo sơ mi Oxford">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=700&q=80"
+                         alt="Áo sơ mi Oxford">
+                </div>
+
+                <div class="product-info">
+                    <p class="category-name">ÁO</p>
+                    <h3>Áo sơ mi Oxford</h3>
+
+                    <div class="price">
+                        <span class="new-price">459.000₫</span>
+                    </div>
+
+                    <button onclick="addToCart('Áo sơ mi Oxford', 459000)">
+                        Thêm vào giỏ
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+            <div class="product-card" data-category="quan" data-name="Quần Jeans Straight">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=700&q=80"
+                         alt="Quần Jeans">
+                    <span class="sale">-15%</span>
+                </div>
+
+                <div class="product-info">
+                    <p class="category-name">QUẦN</p>
+                    <h3>Quần Jeans Straight</h3>
+
+                    <div class="price">
+                        <span class="new-price">549.000₫</span>
+                        <span class="old-price">649.000₫</span>
+                    </div>
+
+                    <button onclick="addToCart('Quần Jeans Straight', 549000)">
+                        Thêm vào giỏ
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+            <div class="product-card" data-category="vay" data-name="Váy Midi thanh lịch">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=700&q=80"
+                         alt="Váy Midi">
+                </div>
+
+                <div class="product-info">
+                    <p class="category-name">VÁY</p>
+                    <h3>Váy Midi thanh lịch</h3>
+
+                    <div class="price">
+                        <span class="new-price">599.000₫</span>
+                    </div>
+
+                    <button onclick="addToCart('Váy Midi thanh lịch', 599000)">
+                        Thêm vào giỏ
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- PRODUCT 5 -->
+            <div class="product-card" data-category="quan" data-name="Quần Cargo">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=80"
+                         alt="Quần Cargo">
+                </div>
+
+                <div class="product-info">
+                    <p class="category-name">QUẦN</p>
+                    <h3>Quần Cargo Street</h3>
+
+                    <div class="price">
+                        <span class="new-price">499.000₫</span>
+                    </div>
+
+                    <button onclick="addToCart('Quần Cargo Street', 499000)">
+                        Thêm vào giỏ
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- PRODUCT 6 -->
+            <div class="product-card" data-category="ao" data-name="Áo khoác Denim">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=700&q=80"
+                         alt="Áo khoác Denim">
+                    <span class="sale">-25%</span>
+                </div>
+
+                <div class="product-info">
+                    <p class="category-name">ÁO</p>
+                    <h3>Áo khoác Denim</h3>
+
+                    <div class="price">
+                        <span class="new-price">699.000₫</span>
+                        <span class="old-price">899.000₫</span>
+                    </div>
+
+                    <button onclick="addToCart('Áo khoác Denim', 699000)">
+                        Thêm vào giỏ
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- PRODUCT 7 -->
+            <div class="product-card" data-category="phukien" data-name="Túi Tote Canvas">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=700&q=80"
+                         alt="Túi Tote">
+                </div>
+
+                <div class="product-info">
+                    <p class="category-name">PHỤ KIỆN</p>
+                    <h3>Túi Tote Canvas</h3>
+
+                    <div class="price">
+                        <span class="new-price">199.000₫</span>
+                    </div>
+
+                    <button onclick="addToCart('Túi Tote Canvas', 199000)">
+                        Thêm vào giỏ
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- PRODUCT 8 -->
+            <div class="product-card" data-category="phukien" data-name="Mũ Baseball">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=700&q=80"
+                         alt="Mũ Baseball">
+                </div>
+
+                <div class="product-info">
+                    <p class="category-name">PHỤ KIỆN</p>
+                    <h3>Mũ Baseball Classic</h3>
+
+                    <div class="price">
+                        <span class="new-price">179.000₫</span>
+                    </div>
+
+                    <button onclick="addToCart('Mũ Baseball Classic', 179000)">
+                        Thêm vào giỏ
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- PROMOTION -->
+    <section class="promotion">
+        <div>
+            <p>ƯU ĐÃI ĐẶC BIỆT</p>
+            <h2>GIẢM 20% CHO ĐƠN HÀNG ĐẦU TIÊN</h2>
+            <p>Sử dụng mã <strong>NOVA20</strong> khi thanh toán.</p>
+        </div>
+
+        <button onclick="copyCoupon()">SAO CHÉP MÃ</button>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80"
+                 alt="NOVAWEAR Store">
+        </div>
+
+        <div class="about-content">
+            <p>ABOUT NOVAWEAR</p>
+
+            <h2>Thời trang dành cho thế hệ mới.</h2>
+
+            <p>
+                NOVAWEAR hướng đến những thiết kế trẻ trung,
+                hiện đại và dễ ứng dụng trong cuộc sống hàng ngày.
+                Chúng tôi tin rằng thời trang không chỉ là trang phục
+                mà còn là cách bạn thể hiện cá tính.
+            </p>
+
+            <button onclick="showAbout()">TÌM HIỂU THÊM</button>
+        </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <footer id="contact">
+
+        <div class="footer-column">
+            <h2>NOVAWEAR</h2>
+            <p>Thời trang hiện đại cho thế hệ trẻ.</p>
+        </div>
+
+        <div class="footer-column">
+            <h3>Liên kết</h3>
+            <a href="#home">Trang chủ</a>
+            <a href="#products">Sản phẩm</a>
+            <a href="#about">Về chúng tôi</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Liên hệ</h3>
+            <p>📍 Hà Nội, Việt Nam</p>
+            <p>📞 0123 456 789</p>
+            <p>✉️ contact@novawear.vn</p>
+        </div>
+
+        <div class="footer-column">
+            <h3>Theo dõi chúng tôi</h3>
+            <div class="social">
+                <span>Facebook</span>
+                <span>Instagram</span>
+                <span>TikTok</span>
+            </div>
+        </div>
+
+    </footer>
+
+
+    <!-- CART -->
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+    <div class="cart" id="cart">
+
+        <div class="cart-header">
+            <h2>Giỏ hàng</h2>
+            <button onclick="closeCart()">✕</button>
+        </div>
+
+        <div id="cartItems"></div>
+
+        <div class="cart-footer">
+
+            <div class="total">
+                <span>Tổng cộng:</span>
+                <strong id="cartTotal">0₫</strong>
+            </div>
+
+            <button class="checkout" onclick="checkout()">
+                THANH TOÁN
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+<script>// ================= CART =================
+
+let cart = [];
+
+
+// THÊM SẢN PHẨM
+function addToCart(name, price) {
+
+    const existingProduct = cart.find(
+        product => product.name === name
+    );
+
+    if (existingProduct) {
+        existingProduct.quantity++;
+    } else {
+        cart.push({
+            name: name,
+            price: price,
+            quantity: 1
+        });
+    }
+
+    updateCart();
+
+    alert("Đã thêm sản phẩm vào giỏ hàng!");
+}
+
+
+// CẬP NHẬT GIỎ HÀNG
+function updateCart() {
+
+    const cartItems = document.getElementById("cartItems");
+    const cartCount = document.getElementById("cartCount");
+    const cartTotal = document.getElementById("cartTotal");
+
+    cartItems.innerHTML = "";
+
+    let total = 0;
+    let count = 0;
+
+    cart.forEach((product, index) => {
+
+        total += product.price * product.quantity;
+        count += product.quantity;
+
+        const item = document.createElement("div");
+
+        item.className = "cart-item";
+
+        item.innerHTML = `
+            <div>
+                <h4>${product.name}</h4>
+                <p>${formatMoney(product.price)}</p>
+            </div>
+
+            <div class="quantity">
+
+                <button onclick="changeQuantity(${index}, -1)">
+                    -
+                </button>
+
+                <span>${product.quantity}</span>
+
+                <button onclick="changeQuantity(${index}, 1)">
+                    +
+                </button>
+
+            </div>
+        `;
+
+        cartItems.appendChild(item);
+    });
+
+    cartCount.innerText = count;
+
+    cartTotal.innerText = formatMoney(total);
+
+    if (cart.length === 0) {
+        cartItems.innerHTML =
+            "<p style='text-align:center;color:#999'>Giỏ hàng đang trống.</p>";
+    }
+}
+
+
+// TĂNG / GIẢM SỐ LƯỢNG
+function changeQuantity(index, amount) {
+
+    cart[index].quantity += amount;
+
+    if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+    }
+
+    updateCart();
+}
+
+
+// ĐỊNH DẠNG TIỀN
+function formatMoney(number) {
+
+    return number.toLocaleString("vi-VN") + "₫";
+}
+
+
+// MỞ GIỎ HÀNG
+function openCart() {
+
+    document.getElementById("cart").classList.add("active");
+
+    document
+        .getElementById("cartOverlay")
+        .classList.add("active");
+}
+
+
+// ĐÓNG GIỎ HÀNG
+function closeCart() {
+
+    document.getElementById("cart").classList.remove("active");
+
+    document
+        .getElementById("cartOverlay")
+        .classList.remove("active");
+}
+
+
+// ================= FILTER =================
+
+function filterProducts(category) {
+
+    const products =
+        document.querySelectorAll(".product-card");
+
+    products.forEach(product => {
+
+        const productCategory =
+            product.dataset.category;
+
+        if (
+            category === "all" ||
+            productCategory === category
+        ) {
+            product.style.display = "block";
+        } else {
+            product.style.display = "none";
+        }
+    });
+}
+
+
+// ================= SEARCH =================
+
+function searchProducts() {
+
+    const keyword =
+        document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const products =
+        document.querySelectorAll(".product-card");
+
+    products.forEach(product => {
+
+        const name =
+            product.dataset.name.toLowerCase();
+
+        if (name.includes(keyword)) {
+            product.style.display = "block";
+        } else {
+            product.style.display = "none";
+        }
+    });
+}
+
+
+// Cho phép Enter để tìm kiếm
+document
+    .getElementById("searchInput")
+    .addEventListener("keypress", function(event) {
+
+        if (event.key === "Enter") {
+            searchProducts();
+        }
+
+    });
+
+
+// ================= COUPON =================
+
+function copyCoupon() {
+
+    navigator.clipboard.writeText("NOVA20");
+
+    alert("Đã sao chép mã giảm giá NOVA20!");
+}
+
+
+// ================= ABOUT =================
+
+function showAbout() {
+
+    alert(
+        "NOVAWEAR là thương hiệu thời trang hướng đến phong cách trẻ trung, hiện đại và cá tính."
+    );
+}
+
+
+// ================= CHECKOUT =================
+
+function checkout() {
+
+    if (cart.length === 0) {
+
+        alert("Giỏ hàng của bạn đang trống!");
+
+        return;
+    }
+
+    let total = 0;
+
+    cart.forEach(product => {
+
+        total += product.price * product.quantity;
+
+    });
+
+    alert(
+        "Đặt hàng thành công!\n\n" +
+        "Tổng tiền: " +
+        formatMoney(total) +
+        "\n\nCảm ơn bạn đã mua hàng tại NOVAWEAR!"
+    );
+
+    cart = [];
+
+    updateCart();
+
+    closeCart();
+}
+
+
+// KHỞI TẠO
+updateCart();</script>
